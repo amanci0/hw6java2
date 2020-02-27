@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Amicable Numbers</title>
+	<style type="text/css">
+		body {color: #6DAEDB; background-color: #fff; text-align: center; font-family: avenir;}
+		input {text-align: center; font-color: #6DAEDB; font-size: 20px; background-color: #fff; border-color: #6DAEDB; padding: 25px; border-style: solid; font-family: avenir;}
+		.my-button {text-align: center; font-size: 15px; background-color: #0072BB; border: none; color: #fff; position: absolute; right: 200px; top: 200px;}
+		header {color: #6DAEDB;text-align: center; font-size: 30px; padding: 30px; font-weight: bold; font-style: italic;}
+	</style>
+</head>
+
+<body>
+	<header>Amicable Numbers</header>
+	
+	<script language="javascript">
+
+		function run() {
+		    firstNum = document.form1.inputFirst.value;
+			secondNum = document.form1.inputSecond.value;
+			tempArray = new Array();
+        	passedArray = new Array();
+
+			function display() {
+				document.getElementById("displayFirst").innerHTML = firstNum;
+				document.getElementById("displaySecond").innerHTML = secondNum;
+			}
+
+			function isFactor(number, testNum) {
+				//number = 6;
+				//testNum = 2;
+				value = number/testNum;
+				if (Number.isInteger(value) == true) {
+					return true;
+				}
+			}
+
+			function showFactor(passedArray) {
+
+				//passedArray = new Array(5,6,7);
+				for (i = 0; i < passedArray.length; i++){
+					document.getElementById("displayFactors").innerHTML = passedArray[i];
+				}
+
+			}
+
+			function addFactor() {
+				//testArray = new Array(1,2,3);
+				total = 0;
+				for (i = 0; i < passedArray.length; i++) {
+					total = total + passedArray[i];
+				}
+				//document.write(total);
+			}
+
+			function getFactor(input) {
+				//input = 10;
+				for (i = 0; i <= input; i++) {
+					if (isFactor() == true) {
+					passedArray[i] = tempArray[i];
+					}
+				}
+
+			}	
+		
+		}
+
+	</script>
+
+	<form name = "form1">
+		First Number <input type="text" name ="inputFirst" id="inputFirst"><br />
+		Second Number <input type="text" name ="inputSecond" id="inputSecond"><br /><br />
+		<input class = "my-button" type="button" value="CHECK" 
+				onclick="run()">
+	</form>
+	<h2>First Number:<h3  id = "displayFirst"> </h3>
+	<h2>First Number:<h3 id = "displaySecond"> </h3>
+	<h2>Factors:<h3 id = "displayFactors"> </h3>
+	<h2>Result:<h3 id = "result"> </h3></h2>
+</body>
+</html>
